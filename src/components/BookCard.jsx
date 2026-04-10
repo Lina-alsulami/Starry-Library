@@ -22,7 +22,7 @@ function BookCard({ book, onViewDetails, onEdit, onDelete }) {
           onClick={(e) => { 
             e.stopPropagation(); 
             onEdit(book); 
-          }}
+          } }
         >
           تعديل
         </button>
