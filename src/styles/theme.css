@@ -1,0 +1,321 @@
+
+/* ------------------------------
+   1. Reset
+------------------------------ */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo", sans-serif;
+  direction: rtl;
+}
+
+/* ------------------------------
+   2. الصفحة الرئيسية (Home Page)
+------------------------------ */
+.home-page {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("../assets/home page.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 20px;
+  position: relative;
+}
+
+/* طبقة خفيفة فوق الخلفية */
+.home-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(1px);
+  z-index: 0;
+}
+
+.home-page * {
+  position: relative;
+  z-index: 2;
+}
+
+/* عنوان الصفحة */
+.home-page h1 {
+  color: #1a1a1a;
+  font-weight: 800;
+  font-size: 2.6rem;
+  text-shadow: 0 2px 4px rgba(255,255,255,0.6);
+}
+
+/* زر إضافة كتاب */
+.home-page .btn-primary {
+  background-color: #f7c600;
+  border: none;
+  color: #000;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.home-page .btn-primary:hover {
+  background-color: #ffe066;
+  transform: translateY(-2px);
+}
+
+/* ------------------------------
+   3. صفحة إضافة البطاقات (Add Page)
+------------------------------ */
+.add-page {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("../assets/home page.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* طبقة ضبابية خفيفة */
+.add-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(4px);
+  background: rgba(255,255,255,0.15);
+  z-index: 0;
+}
+
+.add-page * {
+  position: relative;
+  z-index: 2;
+}
+
+/* الورقة الممزقة */
+.torn-paper {
+  width: 85%;
+  max-width: 650px;
+  background-image: url("../assets/page 2.jpg");
+  background-size: cover;
+  background-position: top center;
+  padding: 40px 35px;
+  border-radius: 12px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));
+  position: relative;
+}
+
+/* عنوان الورقة */
+.torn-paper h2 {
+  font-weight: 800;
+  color: #2b2b2b;
+  margin-bottom: 20px;
+}
+
+/* زر الإغلاق */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+}
+
+/* ------------------------------
+   4. حقول الإدخال داخل الورقة
+------------------------------ */
+.torn-paper .form-label {
+  color: #333;
+  font-weight: 700;
+}
+
+.torn-paper .form-control {
+  background: rgba(255,255,255,0.85);
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  padding: 10px;
+  color: #000;
+}
+
+.torn-paper .form-control:focus {
+  border-color: #f7c600;
+  box-shadow: 0 0 0 0.2rem rgba(247,198,0,0.3);
+}
+
+/* زر الحفظ */
+.torn-paper .btn-primary {
+  background-color: #f7c600;
+  border: none;
+  color: #000;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.torn-paper .btn-primary:hover {
+  background-color: #ffe066;
+}
+
+/* ------------------------------
+   5. Book Cards (BookList + BookCard)
+------------------------------ */
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+
+/* البطاقة */
+.book-card {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  border: 1px solid rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: 0.25s ease;
+  position: relative;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+}
+
+/* عنوان الكتاب */
+.book-card h5 {
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+/* المؤلف */
+.book-card .author {
+  color: #444;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* التقييم */
+.book-card .rating {
+  color: #d4a300;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* أزرار البطاقة */
+.book-card .btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* زر تعديل */
+.book-card .btn-edit {
+  background-color: #f7c600;
+  border: none;
+  color: #000;
+}
+
+.book-card .btn-edit:hover {
+  background-color: #ffe066;
+}
+
+/* زر حذف */
+.book-card .btn-delete {
+  background-color: #d9534f;
+  border: none;
+  color: white;
+}
+
+.book-card .btn-delete:hover {
+  background-color: #c9302c;
+}
+
+/* ------------------------------
+   6. Book Details (نافذة التفاصيل)
+------------------------------ */
+.book-details {
+  background: rgba(255,255,255,0.85);
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.book-details h3 {
+  font-weight: 800;
+  color: #1a1a1a;
+}
+
+.book-details p {
+  color: #333;
+  font-weight: 600;
+}
+
+/* ------------------------------
+    7. Missing Wrapper Classes
+------------------------------ */
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.paper-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.paper-header h2 {
+  margin: 0;
+}
+
+/* ------------------------------
+    8. Alerts
+------------------------------ */
+.alert-info {
+  background: rgba(255,255,255,0.6) !important;
+  color: #000 !important;
+  border: none !important;
+  font-weight: 600 !important;
+  border-radius: 10px !important;
+}
+
+/* Bootstrap Overrides */
+.btn-primary {
+  background-color: #f7c600 !important;
+  border-color: #f7c600 !important;
+  color: #000 !important;
+}
+
+.btn-primary:hover {
+  background-color: #ffe066 !important;
+  border-color: #ffe066 !important;
+}
+
+/* إظهار أيقونة التقويم بوضوح */
+input[type="date"] {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* إظهار أيقونة التقويم في Chrome */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(0.3);
+  opacity: 1;
+  cursor: pointer;
+}
